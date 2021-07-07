@@ -1,4 +1,4 @@
 # Learning Clojure
-Test some cods in Clojure, and try to learn this language.
+Testing some code in Clojure and trying to learn the language :D
 ### Student : Ana Carolina
 ###### by UFAL
