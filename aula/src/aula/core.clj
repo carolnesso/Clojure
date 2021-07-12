@@ -27,12 +27,44 @@
   [transacoes-real]
   (map #(:valor %) transacoes-real))
 
-; map == for it = "o que ele vai executar" "base de dados"
+(defn calcula-valor
+  [transacoes-real]
+  (reduce + (get-valores-a transacoes-real)))
+
+(defn eh-uma-venda?
+  [transacoes-real]
+  (= "venda" (:nome transacoes-real)))
+
+(defn eh-uma-compra?
+  [transacoes-real]
+  (= "compra" (:nome transacoes-real)))
+
+(defn get-vendas
+  [transacoes-real]
+  (filter eh-uma-venda? transacoes-real))
+
+(defn get-compras
+  [transacoes-real]
+  (filter eh-uma-compra? transacoes-real))
+
+
+(comment 
+  (defn get-compras
+  [transacoes-real]
+  (filter #(not (eh-uma-venda? %)) transacoes-real))
+)
+
 
 (defn -main
   [& args]
   (println "Hello, World!"))
 
-; defn define funções
-; def define variaveis 
-; nil == NULL == none
+
+(comment
+ defn define funções
+ def define variaveis 
+ nil == NULL == none 
+ map == for it = "o que ele vai executar" "base de dados"
+ reduce = "o que vai executar" "base de dados" tenta juntar todos os elementos em um só
+ )
+
